@@ -8,6 +8,6 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class TipoDeCostura {
-    private Integer id;
-    private List<MaquinaDeCostura> maquinasDeCostura;
+    private String id;
+    private String nome;
 }

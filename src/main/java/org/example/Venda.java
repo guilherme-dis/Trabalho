@@ -10,7 +10,7 @@ import java.util.List;
 public class Venda {
     private String id;
     private Cliente cliente;
-    private List<Roupa> roupa;
+    private List<Roupa> roupas;
     private Integer quantidade;
 
 }

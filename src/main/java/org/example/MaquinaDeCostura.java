@@ -8,12 +8,11 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class MaquinaDeCostura {
-    private Integer id;
+    private String id;
 
-    private List<TipoDeCostura> tipoDeTecido;
-    private List<String> tipoDeCostura;
+    private List<TipoDeTecido> tipoDeTecido;
+    private List<TipoDeCostura> tipoDeCostura;
     private Supervisor supervisor;
-    private Manutencao manutencao;
     private String fabricante;
     private boolean estaEmManutencao;
     private Roupa roupaAtual;

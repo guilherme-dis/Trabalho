@@ -7,6 +7,6 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class TipoDeTecido {
+    private String id;
     private String nome;
-    private List<Roupa> roupas;
 }

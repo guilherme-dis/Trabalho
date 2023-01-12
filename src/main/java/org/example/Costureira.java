@@ -7,7 +7,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class Costureira {
-    private Integer id;
+    private String id;
     private String nome;
     private Roupa roupaAtual;
     private MaquinaDeCostura maquinaDeCosturaAtual;
@@ -16,7 +16,7 @@ public class Costureira {
     private String turno;
     private Supervisor supervisor;
 
-    private List<Roupa> produzidas;
+    private List<Roupa> roupas;
 
     public void finalizarProducaoDaRoupa(){
 

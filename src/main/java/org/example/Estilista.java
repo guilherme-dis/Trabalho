@@ -8,7 +8,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class Estilista{
-    private Integer id;
+    private String id;
     private String cpf;
     private String telefone;
     private String endereco;

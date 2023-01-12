@@ -9,7 +9,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class Manutencao {
-    private Integer id;
+    private String id;
     private Date data_saida;
     private Date data_entrada;
     private List<MaquinaDeCostura> maquinasDeCostura;
