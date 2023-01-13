@@ -12,6 +12,10 @@ public class Estoque {
     private Integer qtde;
     private List<Roupa> roupas;
 
+    public void addRoupa(Roupa roupa ){
+        roupas.add(roupa);
+    }
+
     public void gerarRelatorioDePecasVendidas(){
 
     }

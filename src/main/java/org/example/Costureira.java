@@ -18,8 +18,16 @@ public class Costureira {
 
     private List<Roupa> roupas;
 
-    public void finalizarProducaoDaRoupa(){
+    public void finalizarProducaoDaRoupa(Roupa roupa, Estoque estoque){
+        System.out.println("Finalizando a produção da roupa e enviando ao estoque");
+        estoque.addRoupa(roupa);
+    }
 
+    public Roupa criaRoupa(Roupa roupa){
+        System.out.println("Costureira produzindo a roupa ");
+        roupa.setCostureira(this);
+
+        return roupa;
     }
 
     public void gerarRelatorioDeRoupasProduzidas(){
