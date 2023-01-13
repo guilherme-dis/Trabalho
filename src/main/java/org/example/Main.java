@@ -87,6 +87,7 @@ public class Main {
         estilistas.get(3).setRoupas(new ArrayList<>(Arrays.asList(roupas.get(3))));
         estilistas.get(4).setRoupas(new ArrayList<>(Arrays.asList(roupas.get(4))));
 
+
         //Relacionar Supervisor com Costureira
         supervisores.get(0).setCostureiras(new ArrayList<>(Arrays.asList(costureiras.get(0),costureiras.get(1))));
         supervisores.get(1).setCostureiras(new ArrayList<>(Arrays.asList(costureiras.get(3),costureiras.get(2))));
