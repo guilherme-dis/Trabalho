@@ -2,13 +2,12 @@ package org.example;
 
 import lombok.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @AllArgsConstructor
 public class MaquinaDeCostura {
-    private String id;
+    private Integer id;
 
     private List<TipoDeTecido> tipoDeTecido;
     private List<TipoDeCostura> tipoDeCostura;

@@ -2,9 +2,7 @@ package org.example;
 
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 @Data
 @AllArgsConstructor
@@ -16,29 +14,51 @@ public class Supervisor {
     private String edereco;
 
     private List<Costureira> costureiras;
-    private List<MaquinaDeCostura> maquinasDeCostura;
+    private List<MaquinaDeCostura> maquinaDeCosturaHashMap = new ArrayList<>();
 
-    public void cadastrarEstilistaEsuasroupas(){
+    public void cadastrarEstilistaEsuasroupas() {
     }
 
-    public void cadastrarRoupas(){
+    public void cadastrarRoupas() {
     }
 
-    public void gerarRelatorioDeMaquinasQuebradas(){
+    public void gerarRelatorioDeMaquinasQuebradas() {
+        System.out.println("=========Gerando relatório de maquinas quebradas");
+        for (MaquinaDeCostura maquinaDeCostura : maquinaDeCosturaHashMap) {
+            if (maquinaDeCostura.isEstaEmManutencao()) {
+                System.out.println("A maquina com o Id: " + maquinaDeCostura.getId() + " esta em manutenção!");
+            }
+        }
     }
 
-    public void enviarMaquinaAoConcerto(){
-
+    public Manutencao enviarMaquinaAoConcerto(MaquinaDeCostura maquina) {
+        System.out.println("Enviando a maquina: " + maquina.getId() + " ao concerto!");
+        addMaquina(maquina);
+        return new Manutencao(maquina);
     }
 
-    public Venda venderPecaAoCliente(Estoque estoque, Roupa roupa, Integer quantidade,Cliente cliente){
+    public Venda venderPecaAoCliente(Estoque estoque, Roupa roupa, Venda venda) {
         System.out.println("Realizando a venda ao cliente!");
-        Venda venda = new Venda();
         estoque.getRoupas().remove(roupa);
-        venda.setQuantidade(quantidade);
-        venda.setCliente(cliente);
-        Random rand = new Random();
-        venda.setId(rand.nextInt());
+        venda.addRoupas(roupa);
         return venda;
+    }
+
+    public Supervisor(String id, String turno, String cpf, String nome, String edereco) {
+        this.id = id;
+        this.turno = turno;
+        this.cpf = cpf;
+        this.nome = nome;
+        this.edereco = edereco;
+    }
+
+    public void addMaquina(MaquinaDeCostura maquinaDeCostura) {
+        maquinaDeCosturaHashMap.add(maquinaDeCostura);
+    }
+
+    public void removeDaManutencao(Manutencao manutencao, MaquinaDeCostura maquinaDeCostura) {
+        System.out.println("Removendo a maquina: " + maquinaDeCostura.getId() + " da manutenção!");
+        manutencao.setData_saida(new Date());
+        maquinaDeCostura.setEstaEmManutencao(false);
     }
 }
