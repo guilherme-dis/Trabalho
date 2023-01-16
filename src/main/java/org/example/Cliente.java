@@ -17,10 +17,6 @@ public class Cliente {
     private String telefone;
     private List<Venda> compras = new ArrayList<>();
 
-    public void comprar() {
-
-    }
-
     public Venda solicitarRoupa(String roupa, Integer quantidade) {
         System.out.println("Solicitando a roupa: " + roupa);
         Venda venda = new Venda(this, quantidade);

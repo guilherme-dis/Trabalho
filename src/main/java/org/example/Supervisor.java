@@ -12,15 +12,8 @@ public class Supervisor {
     private String cpf;
     private String nome;
     private String edereco;
-
     private List<Costureira> costureiras;
     private List<MaquinaDeCostura> maquinaDeCosturaHashMap = new ArrayList<>();
-
-    public void cadastrarEstilistaEsuasroupas() {
-    }
-
-    public void cadastrarRoupas() {
-    }
 
     public void gerarRelatorioDeMaquinasQuebradas() {
         System.out.println("=========Gerando relatório de maquinas quebradas");
@@ -43,22 +36,19 @@ public class Supervisor {
         venda.addRoupas(roupa);
         return venda;
     }
-
-    public Supervisor(String id, String turno, String cpf, String nome, String edereco) {
-        this.id = id;
-        this.turno = turno;
-        this.cpf = cpf;
-        this.nome = nome;
-        this.edereco = edereco;
-    }
-
-    public void addMaquina(MaquinaDeCostura maquinaDeCostura) {
-        maquinaDeCosturaHashMap.add(maquinaDeCostura);
-    }
-
     public void removeDaManutencao(Manutencao manutencao, MaquinaDeCostura maquinaDeCostura) {
         System.out.println("Removendo a maquina: " + maquinaDeCostura.getId() + " da manutenção!");
         manutencao.setData_saida(new Date());
         maquinaDeCostura.setEstaEmManutencao(false);
     }
+    public void addMaquina(MaquinaDeCostura maquinaDeCostura) {
+            maquinaDeCosturaHashMap.add(maquinaDeCostura);
+        }
+    public Supervisor(String id, String turno, String cpf, String nome, String edereco) {
+           this.id = id;
+           this.turno = turno;
+           this.cpf = cpf;
+           this.nome = nome;
+           this.edereco = edereco;
+       }
 }
